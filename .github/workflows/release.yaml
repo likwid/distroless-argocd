@@ -11,7 +11,8 @@ concurrency:
 jobs:
   build:
     name: Build image
-    runs-on: ubuntu-latest
+    runs-on:
+    - self-hosted
 
     # https://docs.github.com/en/actions/reference/authentication-in-a-workflow
     permissions:
