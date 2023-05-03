@@ -1,4 +1,4 @@
-name: Build action
+name: Build axon-argocd
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build image
+    name: Build ArgoCD using Melange
     runs-on:
     - self-hosted
 
