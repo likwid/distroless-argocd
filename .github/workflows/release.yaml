@@ -32,14 +32,14 @@ jobs:
     - uses: actions/checkout@main
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: axon-actions/setup-qemu-action@v2
 
     - name: Install qemu-user
       run: sudo apt-get install -y qemu-user
 
-    - uses: sigstore/cosign-installer@main
+    - uses: axon-actions/cosign-installer@main
 
-    - uses: chainguard-dev/actions/melange-build@main
+    - uses: axon-actions/melange-build@main
       with:
         config: melange.yaml
         sign-with-temporary-key: true
