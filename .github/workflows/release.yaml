@@ -38,7 +38,7 @@ jobs:
 
     - uses: sigstore/cosign-installer@main
 
-    - uses: chainguard-dev/melange-build@main
+    - uses: chainguard-dev/actions/melange-build@main
       with:
         config: melange.yaml
         sign-with-temporary-key: true
