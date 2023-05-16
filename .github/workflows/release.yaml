@@ -11,8 +11,7 @@ concurrency:
 jobs:
   build:
     name: Build ArgoCD using Melange
-    runs-on:
-    - self-hosted
+    runs-on: ubuntu
 
     # https://docs.github.com/en/actions/reference/authentication-in-a-workflow
     permissions:
@@ -32,14 +31,14 @@ jobs:
     - uses: actions/checkout@main
 
     - name: Set up QEMU
-      uses: axon-actions/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v2
 
     - name: Install qemu-user
       run: sudo apt-get install -y qemu-user
 
-    - uses: axon-actions/cosign-installer@main
+    - uses: sigstore/cosign-installer@main
 
-    - uses: axon-actions/melange-build@main
+    - uses: chainguard-dev/melange-build@main
       with:
         config: melange.yaml
         sign-with-temporary-key: true
